@@ -109,33 +109,28 @@ group :test do
   gem 'minitest', require: false
 end
 
-group :test, :development do
-  gem 'rspec'
-  gem 'mock_redis'
-  gem 'listen', require: false
-  gem 'certified', require: false
-  # later appears to break Fabricate(:topic, category: category)
-  gem 'fabrication', '2.9.8', require: false
-  gem 'discourse-qunit-rails', require: 'qunit-rails'
-  gem 'mocha', require: false
-  gem 'rb-fsevent', require: RUBY_PLATFORM =~ /darwin/i ? 'rb-fsevent' : false
-  gem 'rb-inotify', '~> 0.9', require: RUBY_PLATFORM =~ /linux/i ? 'rb-inotify' : false
-  gem 'rspec-rails', require: false
-  gem 'shoulda', require: false
-  gem 'rspec-html-matchers'
-  gem 'pry-nav'
-  gem 'byebug', require: ENV['RM_INFO'].nil?
-  gem 'rubocop', require: false
-end
-
-group :development do
-  gem 'ruby-prof', require: false
-  gem 'bullet', require: !!ENV['BULLET']
-  gem 'better_errors'
-  gem 'binding_of_caller'
-  gem 'annotate'
-  gem 'foreman', require: false
-end
+gem 'rspec'
+gem 'mock_redis'
+gem 'listen', require: false
+gem 'certified', require: false
+# later appears to break Fabricate(:topic, category: category)
+gem 'fabrication', '2.9.8', require: false
+gem 'mocha', require: false
+gem 'rb-fsevent', require: RUBY_PLATFORM =~ /darwin/i ? 'rb-fsevent' : false
+gem 'rb-inotify', '~> 0.9', require: RUBY_PLATFORM =~ /linux/i ? 'rb-inotify' : false
+gem 'rspec-rails', require: false
+gem 'shoulda', require: false
+gem 'rspec-html-matchers'
+gem 'pry-nav'
+gem 'byebug', require: ENV['RM_INFO'].nil?
+gem 'rubocop', require: false
+gem 'discourse-qunit-rails', require: 'qunit-rails'
+gem 'ruby-prof', require: false
+gem 'bullet', require: !!ENV['BULLET']
+gem 'better_errors'
+gem 'binding_of_caller'
+gem 'annotate'
+gem 'foreman', require: false
 
 # this is an optional gem, it provides a high performance replacement
 # to String#blank? a method that is called quite frequently in current
